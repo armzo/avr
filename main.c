@@ -3,39 +3,37 @@
  *
  *  Created on: 04/09/2013
  *      Author: armz
+ *     Version: B1.0
  */
 
 /* Name: main.c
- * Author: <insert your name here>
- * Copyright: <insert your copyright message here>
- * License: <insert your license reference here>
+ * Author: <Adrian Ramirez>
+ * Copyright: <free>
+ * License: <Granted>
  */
 
 /* Documentacion
-1. revision del dimensionamiento de variables
-2. Documentacion de rutinas de apoyo al loop main. (en) 
-
-
+   test version
+   functional with implemented test functions
+   you might write your own functions and change the provided here
 */
 
 #include "shell.h"
 
 int8_t entries = CMD_ENTRIES;
 uint8_t err = 0;
-/*--- Global Variables ---*/
 
+/*--- Global Variables ---*/
 static char *my_argv[BUFLEN];  // my_argv es un buffer de apuntadores char
 static int my_argc; // my_argc es el contador de argumentos
-
 FILE uart_str = FDEV_SETUP_STREAM(uart_putchar, uart_getchar, _FDEV_SETUP_RW);
-
 /*--- help functions ---*/
 
 int8_t slookup
 (	const cmdEntry_t dict[], 
 	const char     search[], 
 	const int8_t   entries   )
-/* find for an entry by comparing strings in the entries array
+/* find for an entry by comparing strings provided within the entries array
    return array[index] if found or -1 (not found)
  */
 {
