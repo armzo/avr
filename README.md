@@ -1,2 +1,2 @@
 # avr
-some avr programs to share
+avr programs to share
